@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp" ng-controller="myCtrl">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<button ng-click="inc()">Increment</button>
+{{val}}
+
+<h1><span ng-show="isEvenNumber()">Even</span></h1>
+<h1 ng-hide="isEvenNumber()">Odd</h1>
+<body>
+<script type="text/javascript" src="angular.min.js"></script>
+<script>
+angular.module('myApp',[]).
+controller('myCtrl',function($scope){
+	$scope.val=1;
+	$scope.inc=function(){
+		$scope.val+=1;
+	};
+	$scope.isEvenNumber=function(){
+		return $scope.val%2==0;
+	}
+});
+</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+<h1>ng-repeat - with Array's</h1>
+<div ng-repeat="num in values">
+	{{num}}
+</div>
+<hr />
+
+
+<h1>ng-repeat  - with Array's 
+<br />example: In an array same repeated values are their then array will show error or not display, for this solution see the below one and see also the code </h1>
+<div ng-repeat="num2 in values2">
+{{num2}}
+</div>
+<hr />
+<h1>Here the solution for above code add addition code "track by $index"</h1>
+<div ng-repeat="num3 in values3 track by $index">
+{{num3}} - Track code value {{$index}}
+<span ng-show="$first">First</span>
+<span ng-show="$middle">Middle</span>
+<span ng-show="$last">Last</span>
+</div>
+</div>
+<script type="text/javascript" src="angular.min.js"></script>
+<script>
+angular.module('myApp',[]).
+controller('myCtrl',function($scope){
+	$scope.values=[1,2,3,4,5,6,7];
+	$scope.values2=[1,2,3,4,5,6,6];
+	$scope.values3=[1,2,3,4,5,6,6];
+});
+</script>
+</body>
+</html>

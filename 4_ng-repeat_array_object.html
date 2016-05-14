@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<div ng-app='myApp' ng-controller="myCtrl">
+<h1>Values in Array Object in ng-repeat</h1>
+<div ng-repeat-start="x in arrayObj">
+	{{x.name+', '+x.mobile+', '+x.location}}
+   
+   
+
+</div>
+<hr ng-repeat-end />
+</div>
+<script type="text/javascript" src="angular.min.js"></script>
+<script>
+angular.module('myApp',[]).
+controller('myCtrl',function($scope){
+	$scope.arrayObj=[
+	{name:'ram',mobile:234234,location:'Hyderabad'},
+	{name:'chandra',mobile:234234,location:'Hitech city'},
+	{name:'Swetha',mobile:234234324,location:'Madhapur'}];
+});
+</script>
+</body>
+</html>
